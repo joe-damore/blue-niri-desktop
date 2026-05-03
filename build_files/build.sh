@@ -3,6 +3,9 @@
 set -ouex pipefail
 
 ### Install packages
+# Desktop Building Blocks
+dnf5 install -y gdm niri
+
 # Fonts
 dnf5 install -y rsms-inter-fonts fira-code-fonts
 
@@ -44,3 +47,4 @@ dnf5 config-manager setopt fedora-cisco-openh264.enabled=1
 systemctl enable podman.socket
 systemctl enable libvirtd
 systemctl enable bluetooth
+systemctl enable gdm
