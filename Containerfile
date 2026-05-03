@@ -1,9 +1,13 @@
+ARG BASE_IMAGE_NAME="base"
+ARG BASE_IMAGE_VARIANT="main"
+ARG BASE_IMAGE_FEDORA_VERSION="44"
+
 # Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
 COPY build_files /
 
 # Universal Blue base
-FROM ghcr.io/ublue-os/base-main:latest
+FROM ghcr.io/ublue-os/${BASE_IMAGE_NAME}-${BASE_IMAGE_VARIANT}:${BASE_IMAGE_FEDORA_VERSION}
 
 ### [IM]MUTABLE /opt
 ## Some bootable images, like Fedora, have /opt symlinked to /var/opt, in order to
