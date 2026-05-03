@@ -10,6 +10,9 @@ on:
     branches:
       - main
     paths-ignore:
+      - '.github/workflows/**/*'
+      - 'disk_config/**/*'
+      - '**/.editorconfig'
       - '**/README.md'
   workflow_dispatch:
 
